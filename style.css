@@ -41,18 +41,19 @@ body {
 <!-----------button logic------------------->
 
 :root {
-  --bgColor: #ff0000; /* Red background color */
-  --txtColor: #000000; /* Black text color */
-  --borColor: rgba(0, 0, 0, 0);
+  --bgColor: #1fcc9e; /* Updated background color */
+  --txtColor: #ffffff; /* White text color */
+  --borColor: rgba(0, 0, 0, 0.4); /* Slightly transparent border color */
   --sizeVar: 8px;
-  --textPrimary: #4b4760;
-  --textSecondary: #7f7989;
-  --borderColor: #cccccc;
+  --textPrimary: #000000;
+  --textSecondary: #000000;
+  --borderColor: #ff0000;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: calc(var(--sizeVar) * 1.75);
+  font-size: calc(var(8px) * 1.75);
 }
 .flexDiv {
   display: flex;
@@ -68,13 +69,13 @@ body {
   pointer-events: none;
   transition: opacity 100ms linear 0s;
   filter: drop-shadow(0 6px 26px rgba(0, 0, 0, 0.24));
-  padding-top: calc(var(--sizeVar) / 2);
+  padding-top: calc(var(8px) / 2);
 }
 .multiSelect {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  border: 1px solid var(--borderColor);
+  border: 1px solid var(#ff0000);
   box-sizing: border-box;
-  border-radius: calc(var(--sizeVar) / 2);
+  border-radius: calc(var(8px) / 2);
   position: absolute;
   width: auto;
   left: 0;
@@ -84,7 +85,7 @@ body {
   transition: transform 300ms ease-in-out 0s, clip-path 300ms ease-in-out 0s;
 }
 .multiSelect div {
-  color: var(--textPrimary);
+  color: var(#000000);
   padding: 16px;
   width: auto;
   cursor: pointer;
@@ -93,10 +94,10 @@ body {
   background-color: #f6f6f6;
 }
 .bottomBorder {
-  border-bottom: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(#ff0000);
 }
 .topBorder {
-  border-top: 1px solid var(--borderColor);
+  border-top: 1px solid var(#ff0000);
 }
 .iconDiv {
   display: flex;
@@ -118,7 +119,7 @@ body {
   opacity: 1;
 }
 .multiSelect .placeholder {
-  color: var(--textSecondary);
+  color: var(#000000);
   font-style: italic;
 }
 .multiSelect .narrow {
@@ -126,7 +127,7 @@ body {
   padding-bottom: 10px;
 }
 .multiSelect i {
-  color: var(--textSecondary);
+  color: var(#000000);
 }
 .multiSelect {
   transform: translateX(100%);
@@ -137,41 +138,41 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .sec_btn {
-  --bgColor: #869cff;
+  #1fcc9e: #869cff;
 }
 button {
   font-family: "Roboto", sans-serif;
-  font-size: calc(var(--sizeVar) * 1.75);
+  font-size: calc(var(8px) * 1.75);
   font-weight: 500;
   border: none;
   outline: none;
-  padding: var(--sizeVar) calc(var(--sizeVar) * 2);
-  border-radius: calc(var(--sizeVar) / 2);
+  padding: var(8px) calc(var(8px) * 2);
+  border-radius: calc(var(8px) / 2);
   cursor: pointer;
-  background-color: var(--bgColor);
-  color: var(--txtColor);
-  box-shadow: 0 0 0 1px var(--borColor) inset;
+  background-color: var(#1fcc9e);
+  color: var(#ffffff);
+  box-shadow: 0 0 0 1px var(rgba(0, 0, 0, 0.4)) inset;
 }
 button:focus {
-  --borColor: rgba(0, 0, 0, 0.4);
+  rgba(0, 0, 0, 0.4): rgba(0, 0, 0, 0.4);
 }
 button:hover {
-  --bgColor: #1fcc9e;
+  #1fcc9e: #1fcc9e;
 }
 .sec_btn:hover {
-  --bgColor: #6279e7;
+  #1fcc9e: #6279e7;
 }
 .tri_btn:hover {
-  --bgColor: #f8f7f8;
+  #1fcc9e: #f8f7f8;
 }
 button:active {
-  --bgColor: #1db284;
+  #1fcc9e: #1db284;
 }
 .sec_btn:active {
-  --bgColor: #5468c7;
+  #1fcc9e: #5468c7;
 }
 .tri_btn:active {
-  --bgColor: #e7e7e7;
+  #1fcc9e: #e7e7e7;
 }
 
 
