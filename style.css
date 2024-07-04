@@ -40,128 +40,140 @@ body {
 
 <!-----------button logic------------------->
 
-
-.rubik-<uniquifier> {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+:root {
+  --bgColor: #0fddaf;
+  --txtColor: #ffffff;
+  --borColor: rgba(0, 0, 0, 0);
+  --sizeVar: 8px;
+  --textPrimary: #4b4760;
+  --textSecondary: #7f7989;
+  --borderColor: #cccccc;
 }
-
 body {
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-  background-color: #F8F8F8;
-  color: ;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--sizeVar) * 1.75);
 }
-
-    header {
-      background-color: #E74848;
-      color: #fff;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
-    }
-
-<!-----------button logic------------------->
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
+.flexDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  margin: 32px;
+}
+.selectWrapper {
+  width: 100%;
+  position: relative;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 100ms linear 0s;
+  filter: drop-shadow(0 6px 26px rgba(0, 0, 0, 0.24));
+  padding-top: calc(var(--sizeVar) / 2);
+}
+.multiSelect {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  border: 1px solid var(--borderColor);
+  box-sizing: border-box;
+  border-radius: calc(var(--sizeVar) / 2);
+  position: absolute;
+  width: auto;
+  left: 0;
+  right: 0;
   overflow: hidden;
+  background: #ffffff;
+  transition: transform 300ms ease-in-out 0s, clip-path 300ms ease-in-out 0s;
+}
+.multiSelect div {
+  color: var(--textPrimary);
+  padding: 16px;
+  width: auto;
+  cursor: pointer;
+}
+.multiSelect div:hover {
+  background-color: #f6f6f6;
+}
+.bottomBorder {
+  border-bottom: 1px solid var(--borderColor);
+}
+.topBorder {
+  border-top: 1px solid var(--borderColor);
+}
+.iconDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.noSpace {
+  justify-content: flex-start;
+  gap: 6px;
+}
+.titleDiv {
+  pointer-events: none;
+  font-weight: 700;
+}
+.justHover i {
+  opacity: 0;
+}
+.justHover:hover i {
+  opacity: 1;
+}
+.multiSelect .placeholder {
+  color: var(--textSecondary);
+  font-style: italic;
+}
+.multiSelect .narrow {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.multiSelect i {
+  color: var(--textSecondary);
+}
+.multiSelect {
+  transform: translateX(100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.multiSelect:nth-of-type(1) {
+  transform: translateX(0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.sec_btn {
+  --bgColor: #869cff;
+}
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: calc(var(--sizeVar) * 1.75);
+  font-weight: 500;
+  border: none;
+  outline: none;
+  padding: var(--sizeVar) calc(var(--sizeVar) * 2);
+  border-radius: calc(var(--sizeVar) / 2);
+  cursor: pointer;
+  background-color: var(--bgColor);
+  color: var(--txtColor);
+  box-shadow: 0 0 0 1px var(--borColor) inset;
+}
+button:focus {
+  --borColor: rgba(0, 0, 0, 0.4);
+}
+button:hover {
+  --bgColor: #1fcc9e;
+}
+.sec_btn:hover {
+  --bgColor: #6279e7;
+}
+.tri_btn:hover {
+  --bgColor: #f8f7f8;
+}
+button:active {
+  --bgColor: #1db284;
+}
+.sec_btn:active {
+  --bgColor: #5468c7;
+}
+.tri_btn:active {
+  --bgColor: #e7e7e7;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-<!-----------------End of Button Logic-------------------->
-    main {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #E74848;
-      color: #fff;
-      padding: 10px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .content {
-      background-color: #E4E4E4;
-      padding: 20px;
-      border: 1px solid #444;
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      margin-top: 0;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        text-align: center;
-      }
-
-      .logo {
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      nav {
-        justify-content: center;
-      }
-    }
-
-    .pdf-embed {
-      width: 100%;
-      height: 500px;
-      border: 1px solid #444;
-      margin-bottom: 20px;
-    }
 
 <!-----------------End of Button Logic-------------------->
     main {
