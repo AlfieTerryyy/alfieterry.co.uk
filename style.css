@@ -40,16 +40,6 @@ body {
 
 <!-----------button logic------------------->
 
-:root {
-  --bgColor: #1fcc9e; /* Updated background color */
-  --txtColor: #ffffff; /* White text color */
-  --borColor: rgba(0, 0, 0, 0.4); /* Slightly transparent border color */
-  --sizeVar: 8px;
-  --textPrimary: #000000;
-  --textSecondary: #000000;
-  --borderColor: #ff0000;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
