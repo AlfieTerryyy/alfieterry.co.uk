@@ -41,8 +41,8 @@ body {
 <!-----------button logic------------------->
 
 :root {
-  --bgColor: #0fddaf;
-  --txtColor: #ffffff;
+  --bgColor: #ff0000; /* Red background color */
+  --txtColor: #000000; /* Black text color */
   --borColor: rgba(0, 0, 0, 0);
   --sizeVar: 8px;
   --textPrimary: #4b4760;
