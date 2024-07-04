@@ -72,9 +72,9 @@ nav {
     }
     .nav-square-toggle {
       display: inline-block;
-      width: 140px;
+      width: 24px;
       height: 24px;
-      background-color: none;
+      background-color: blue;
       border-radius: 10.258px;
       margin: 10.258px;
       text-align: center;
