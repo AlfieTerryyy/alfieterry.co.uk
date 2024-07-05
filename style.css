@@ -187,9 +187,9 @@ button:active {
     }
 
     .content {
-      background-color: #E4E4E4;
+      background-color: #F8F8F8;
       padding: 20px;
-      border: 1px solid #444;
+      border: none;
       margin-bottom: 40px;
     }
 
