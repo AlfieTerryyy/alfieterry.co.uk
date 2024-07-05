@@ -14,8 +14,8 @@ body {
 }
 
     header {
-      background-color: #E74848;
-      color: #fff;
+      background-color: #C7C7C7;
+      color: #454545;
       padding: 20px;
       display: flex;
       flex-wrap: wrap;
@@ -40,140 +40,37 @@ body {
 
 <!-----------button logic------------------->
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: calc(var(8px) * 1.75);
-}
-.flexDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-  margin: 32px;
-}
-.selectWrapper {
-  width: 100%;
-  position: relative;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 100ms linear 0s;
-  filter: drop-shadow(0 6px 26px rgba(0, 0, 0, 0.24));
-  padding-top: calc(var(8px) / 2);
-}
-.multiSelect {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  border: 1px solid var(#ff0000);
-  box-sizing: border-box;
-  border-radius: calc(var(8px) / 2);
-  position: absolute;
-  width: auto;
-  left: 0;
-  right: 0;
+/* The navbar container */
+.topnav {
   overflow: hidden;
-  background: #ffffff;
-  transition: transform 300ms ease-in-out 0s, clip-path 300ms ease-in-out 0s;
+  background-color: #C3C3C3;
 }
-.multiSelect div {
-  color: var(#000000);
-  padding: 16px;
-  width: auto;
-  cursor: pointer;
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #222222;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
-.multiSelect div:hover {
-  background-color: #f6f6f6;
-}
-.bottomBorder {
-  border-bottom: 1px solid var(#ff0000);
-}
-.topBorder {
-  border-top: 1px solid var(#ff0000);
-}
-.iconDiv {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.noSpace {
-  justify-content: flex-start;
-  gap: 6px;
-}
-.titleDiv {
-  pointer-events: none;
-  font-weight: 700;
-}
-.justHover i {
-  opacity: 0;
-}
-.justHover:hover i {
-  opacity: 1;
-}
-.multiSelect .placeholder {
-  color: var(#000000);
-  font-style: italic;
-}
-.multiSelect .narrow {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.multiSelect i {
-  color: var(#000000);
-}
-.multiSelect {
-  transform: translateX(100%);
-  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-}
-.multiSelect:nth-of-type(1) {
-  transform: translateX(0);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-}
-.sec_btn {
-  #1fcc9e: #869cff;
-}
-button {
-  font-family: "Roboto", sans-serif;
-  font-size: calc(var(8px) * 1.75);
-  font-weight: 500;
-  border: none;
-  outline: none;
-  padding: var(8px) calc(var(8px) * 2);
-  border-radius: calc(var(8px) / 2);
-  cursor: pointer;
-  background-color: var(#1fcc9e);
-  color: var(#ffffff);
-  box-shadow: 0 0 0 1px var(rgba(0, 0, 0, 0.4)) inset;
-}
-button:focus {
-  rgba(0, 0, 0, 0.4): rgba(0, 0, 0, 0.4);
-}
-button:hover {
-  #1fcc9e: #1fcc9e;
-}
-.sec_btn:hover {
-  #1fcc9e: #6279e7;
-}
-.tri_btn:hover {
-  #1fcc9e: #f8f7f8;
-}
-button:active {
-  #1fcc9e: #1db284;
-}
-.sec_btn:active {
-  #1fcc9e: #5468c7;
-}
-.tri_btn:active {
-  #1fcc9e: #e7e7e7;
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 
-<!-----------------End of Button Logic-------------------->
+<!-----------------End of Button Logic------------>
     main {
       padding: 20px;
     }
 
     footer {
-      background-color: #E74848;
-      color: #fff;
+      background-color: #C7C7C7;
+      color: #454545;
       padding: 10px;
       text-align: center;
       position: fixed;
@@ -187,6 +84,7 @@ button:active {
     }
 
     .content {
+      background-color: #F8F8F8;
       padding: 20px;
       margin-bottom: 40px;
     }
@@ -219,7 +117,7 @@ button:active {
 /*images*/
 /* Example CSS for Image Styling */
 img {
-    border: 1px solid #ddd; /* Thumbnail border */
+    border: 1px solid #454545; /* Thumbnail border */
     padding: 5px; /* Thumbnail padding */
     width: 0 auto; /* Thumbnail width */
     display: block; /* Center horizontally */
