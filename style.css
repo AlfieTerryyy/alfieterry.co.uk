@@ -1,196 +1,149 @@
-/* Reset and Base Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+.rubik-<uniquifier> {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
-    background: #f8f8f8;
-    color: #333;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #F8F8F8;
+  color: ;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header Styles */
-header {
-    background-color: #003366;
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    height: 50px;
-    margin-right: 10px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-nav.topnav {
-    margin-top: 10px;
-}
-
-nav.topnav a {
-    padding: 10px 16px;
-    text-decoration: none;
-    color: #fff;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav.topnav a:hover {
-    background-color: #00509e;
-    color: #fff;
-}
-
-/* Main Styles */
-main {
-    padding: 40px 0;
-}
-
-.content {
-    background-color: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.content:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: #003366;
-}
-
-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #003366;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    margin-top: 60px;
-}
-
-footer p {
-    font-size: 0.9em;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: auto;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #ccc;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
     header {
-        padding: 15px 0;
-    }
-
-    header .logo img {
-        height: 40px;
+      background-color: #C7C7C7;
+      color: #454545;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
 
     header h1 {
-        font-size: 2em;
+      margin: 0;
+      font-size: 2em;
     }
 
-    nav.topnav a {
-        padding: 10px 12px;
+    .logo {
+      display: flex;
+      align-items: center;
     }
 
-    .content {
-        padding: 20px;
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
     }
 
-    section h2 {
-        font-size: 2em;
+<!-----------button logic------------------->
+
+/* The navbar container */
+.topnav {
+  overflow: hidden;
+  background-color: #C3C3C3;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #222222;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+<!-----------------End of Button Logic------------>
+    main {
+      padding: 20px;
     }
 
     footer {
-        padding: 15px 0;
+      background-color: #C7C7C7;
+      color: #454545;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
 
-    footer p {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    nav.topnav a {
-        padding: 8px 10px;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .content {
-        padding: 15px;
+      background-color: #F8F8F8;
+      padding: 20px;
+      margin-bottom: 40px;
     }
 
     section h2 {
-        font-size: 1.8em;
+      margin-top: 0;
     }
 
-    footer p {
-        font-size: 0.7em;
+    @media (max-width: 600px) {
+      header {
+        text-align: center;
+      }
+
+      .logo {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        justify-content: center;
+      }
     }
+
+    .pdf-embed {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #444;
+      margin-bottom: 20px;
+    }
+/*images*/
+/* Example CSS for Image Styling */
+img {
+    border: 1px solid #454545; /* Thumbnail border */
+    padding: 5px; /* Thumbnail padding */
+    width: 0 auto; /* Thumbnail width */
+    display: block; /* Center horizontally */
+    margin: 0 auto; /* Center horizontally */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Responsive image */
+    transition: transform 0.3s; /* Hover effect transition */
 }
+
+img:hover {
+    transform: none;
+}
+
+img-2{
+    border: 1px solid #ddd; /* Thumbnail border */
+    padding: 5px; /* Thumbnail padding */
+    width: 0 auto; /* Thumbnail width */
+    display: block; /* Center horizontally */
+    margin: 0 auto; /* Center horizontally */
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Responsive image */
+    filter: grayscale(100%); /* Image filter (grayscale) */
+    transition: transform 0.3s; /* Hover effect transition */
+}
+
+img-2:hover {
+    transform: none; 
+}
+
