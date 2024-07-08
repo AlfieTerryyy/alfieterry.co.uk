@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+can you adjust this for mobile devices as well and tablets /* Reset and Base Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -58,6 +58,7 @@ nav.topnav a {
 
 nav.topnav a:hover {
     background-color: #00509e;
+    color: #fff;
 }
 
 /* Main Styles */
@@ -138,12 +139,6 @@ footer p {
 }
 
 /* Responsive Styles */
-@media (max-width: 1200px) {
-    .container {
-        padding: 0 15px;
-    }
-}
-
 @media (max-width: 768px) {
     header {
         padding: 15px 0;
