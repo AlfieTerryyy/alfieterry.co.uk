@@ -25,9 +25,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
-        header.style.backgroundColor = '#444';
+        header.style.backgroundColor = '#002244';
     } else {
-        header.style.backgroundColor = '#333';
+        header.style.backgroundColor = '#003366';
     }
 });
 
@@ -35,8 +35,8 @@ window.addEventListener('scroll', function () {
 window.addEventListener('scroll', function () {
     const footer = document.querySelector('footer');
     if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-        footer.style.backgroundColor = '#444';
+        footer.style.backgroundColor = '#002244';
     } else {
-        footer.style.backgroundColor = '#333';
+        footer.style.backgroundColor = '#003366';
     }
 });
