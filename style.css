@@ -1,149 +1,58 @@
-
-.rubik-<uniquifier> {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+section h2 {
+  margin-top: 0;
 }
 
-body {
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-  background-color: #F8F8F8;
-  color: ;
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    justify-content: center;
+  }
 }
 
-    header {
-      background-color: #C7C7C7;
-      color: #454545;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo img {
-      height: 50px;
-      margin-right: 10px;
-    }
-
-<!-----------button logic------------------->
-
-/* The navbar container */
-.topnav {
-  overflow: hidden;
-  background-color: #C3C3C3;
+.pdf-embed {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #444;
+  margin-bottom: 20px;
 }
 
-/* Navbar links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #222222;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Links - change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
-<!-----------------End of Button Logic------------>
-    main {
-      padding: 20px;
-    }
-
-    footer {
-      background-color: #C7C7C7;
-      color: #454545;
-      padding: 10px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .content {
-      background-color: #F8F8F8;
-      padding: 20px;
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      margin-top: 0;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        text-align: center;
-      }
-
-      .logo {
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-
-      nav {
-        justify-content: center;
-      }
-    }
-
-    .pdf-embed {
-      width: 100%;
-      height: 500px;
-      border: 1px solid #444;
-      margin-bottom: 20px;
-    }
-/*images*/
+/* Images */
 /* Example CSS for Image Styling */
 img {
-    border: 1px solid #454545; /* Thumbnail border */
-    padding: 5px; /* Thumbnail padding */
-    width: 0 auto; /* Thumbnail width */
-    display: block; /* Center horizontally */
-    margin: 0 auto; /* Center horizontally */
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Responsive image */
-    transition: transform 0.3s; /* Hover effect transition */
+  border: 1px solid #454545; /* Thumbnail border */
+  padding: 5px; /* Thumbnail padding */
+  width: auto; /* Correct width value */
+  display: block; /* Center horizontally */
+  margin: 0 auto; /* Center horizontally */
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Responsive image */
+  transition: transform 0.3s; /* Hover effect transition */
 }
 
 img:hover {
-    transform: none;
+  transform: scale(1.1); /* Optional hover effect */
 }
 
-img-2{
-    border: 1px solid #ddd; /* Thumbnail border */
-    padding: 5px; /* Thumbnail padding */
-    width: 0 auto; /* Thumbnail width */
-    display: block; /* Center horizontally */
-    margin: 0 auto; /* Center horizontally */
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Responsive image */
-    filter: grayscale(100%); /* Image filter (grayscale) */
-    transition: transform 0.3s; /* Hover effect transition */
+.img-2 {
+  border: 1px solid #ddd; /* Thumbnail border */
+  padding: 5px; /* Thumbnail padding */
+  width: auto; /* Correct width value */
+  display: block; /* Center horizontally */
+  margin: 0 auto; /* Center horizontally */
+  max-width: 100%; /* Responsive image */
+  height: auto; /* Responsive image */
+  filter: grayscale(100%); /* Image filter (grayscale) */
+  transition: transform 0.3s; /* Hover effect transition */
 }
 
-img-2:hover {
-    transform: none; 
+.img-2:hover {
+  transform: scale(1.1); /* Optional hover effect */
 }
- 
