@@ -1,58 +1,148 @@
-section h2 {
-  margin-top: 0;
+.rubik-<uniquifier> {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
-@media (max-width: 600px) {
-  header {
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+  background-color: #F8F8F8;
+  color: ;
+}
+
+    header {
+      background-color: #E74848;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #fff;
+      color: #000;
+      border-color: #000;
+    }
+
+.navbar {
+    /* common styles for all screen sizes */
+    background-color: #333;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.navbar a {
+    /* link styles for all screen sizes */
+    float: left;
+    display: block;
+    color: #f2f2f2;
     text-align: center;
-  }
-
-  .logo {
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  nav {
-    justify-content: center;
-  }
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.pdf-embed {
-  width: 100%;
-  height: 500px;
-  border: 1px solid #444;
-  margin-bottom: 20px;
+.navbar a:hover {
+    /* hover effect for all screen sizes */
+    background-color: #ddd;
+    color: black;
 }
 
-/* Images */
-/* Example CSS for Image Styling */
-img {
-  border: 1px solid #454545; /* Thumbnail border */
-  padding: 5px; /* Thumbnail padding */
-  width: auto; /* Correct width value */
-  display: block; /* Center horizontally */
-  margin: 0 auto; /* Center horizontally */
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Responsive image */
-  transition: transform 0.3s; /* Hover effect transition */
+@media (max-width: 768px) {
+    /* styles for mobile screens */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar a {
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
 }
 
-img:hover {
-  transform: scale(1.1); /* Optional hover effect */
-}
 
-.img-2 {
-  border: 1px solid #ddd; /* Thumbnail border */
-  padding: 5px; /* Thumbnail padding */
-  width: auto; /* Correct width value */
-  display: block; /* Center horizontally */
-  margin: 0 auto; /* Center horizontally */
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Responsive image */
-  filter: grayscale(100%); /* Image filter (grayscale) */
-  transition: transform 0.3s; /* Hover effect transition */
-}
+    main {
+      padding: 20px;
+    }
 
-.img-2:hover {
-  transform: scale(1.1); /* Optional hover effect */
-}
+    footer {
+      background-color: #E74848;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content {
+      background-color: #E4E4E4;
+      padding: 20px;
+      border: 1px solid #444;
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        text-align: center;
+      }
+
+      .logo {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    .pdf-embed {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #444;
+      margin-bottom: 20px;
+    }
