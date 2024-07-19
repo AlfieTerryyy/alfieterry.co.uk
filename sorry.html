@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+          font-family: 'Georgia', serif;
+          overflow: hidden;
+          background-color: #f8d7da;
+          transition: background-color 2s;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+      }
+
+      .container {
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 20px;
+          padding: 30px;
+          width: 90%;
+          max-width: 500px;
+          text-align: center;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease-in-out;
+          margin: 20px;
+      }
+
+      .container:hover {
+          transform: scale(1.05);
+      }
+
+      h1 {
+          color: #e63946;
+          font-size: 2em;
+          margin-bottom: 15px;
+          transition: text-shadow 0.5s;
+      }
+
+      p {
+          color: #333;
+          line-height: 1.8;
+          font-size: 1em;
+          margin: 10px 0;
+          transition: color 0.5s;
+      }
+
+      button {
+          background-color: #e63946;
+          color: white;
+          border: none;
+          padding: 12px 25px;
+          border-radius: 25px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s, transform 0.3s;
+          margin-top: 20px;
+      }
+
+      button:hover {
+          background-color: #d62839;
+          transform: scale(1.1);
+      }
+
+      @media (max-width: 768px) {
+          h1 {
+              font-size: 1.8em;
+          }
+
+          p {
+              font-size: 1em;
+          }
+
+          .container {
+              padding: 20px;
+          }
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I'm Sorry, Lorri</h1>
+        <p>I hope this message finds you well. I want to sincerely apologize for making things awkward by expressing my feelings. It was never my intention to make you uncomfortable.</p>
+        <p>Our friendship is incredibly important to me, and I cherish the time we spend together. I hope we can still be friends because I truly value having you in my life.</p>
+        <p>Please let me know if you’re open to it. I'm here whenever you’re ready to talk.</p>
+        <p>With warm regards,</p>
+        <p>Alfie</p>
+        <button onclick="sendMessage()">Send a Message To Me</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://alfieterry.co.uk/audio/1-01%20Livin%27%20On%20a%20Prayer.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Play background music
+        document.getElementById('backgroundMusic').play();
+
+        // Function to open WhatsApp chat
+        function sendMessage() {
+            const phoneNumber = 'whatsapp://send?phone=+1234567890&text=Hi%20Lorri%2C%20Can%20we%20still%20be%20friends%3F';
+            window.open(phoneNumber, '+44 7946 358290');
+        }
+
+        // Soft background color animation
+        const colors = ["#f8d7da", "#fff3cd", "#d4edda", "#d1ecf1", "#f5c6cb"];
+        let index = 0;
+
+        setInterval(() => {
+            document.body.style.backgroundColor = colors[index];
+            index = (index + 1) % colors.length;
+        }, 5000);
+
+        // Text animation using jQuery
+        $(document).ready(function(){
+            $('.container p').hover(function(){
+                $(this).css('color', '#e63946');
+            }, function(){
+                $(this).css('color', '#333');
+            });
+
+            $('.container h1').hover(function(){
+                $(this).css('text-shadow', '0 0 20px #e63946');
+            }, function(){
+                $(this).css('text-shadow', 'none');
+            });
+        });
+    </script>
+</body>
+</html>
