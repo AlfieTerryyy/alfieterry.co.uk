@@ -7,88 +7,88 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-      body {
-          font-family: 'Georgia', serif;
-          overflow: hidden;
-          background-color: #f8d7da;
-          transition: background-color 2s;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-      }
+        body {
+            font-family: 'Georgia', serif;
+            overflow: hidden;
+            background-color: #f8d7da;
+            transition: background-color 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-      .container {
-          background-color: rgba(255, 255, 255, 0.9);
-          border-radius: 20px;
-          padding: 30px;
-          width: 90%;
-          max-width: 500px;
-          text-align: center;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-          transition: transform 0.3s ease-in-out;
-          margin: 20px;
-      }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            margin: 20px;
+        }
 
-      .container:hover {
-          transform: scale(1.05);
-      }
+        .container:hover {
+            transform: scale(1.05);
+        }
 
-      h1 {
-          color: #e63946;
-          font-size: 2em;
-          margin-bottom: 15px;
-          transition: text-shadow 0.5s;
-      }
+        h1 {
+            color: #e63946;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            transition: text-shadow 0.5s;
+        }
 
-      p {
-          color: #333;
-          line-height: 1.8;
-          font-size: 1em;
-          margin: 10px 0;
-          transition: color 0.5s;
-      }
+        p {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin: 15px 0;
+            transition: color 0.5s;
+        }
 
-      button {
-          background-color: #e63946;
-          color: white;
-          border: none;
-          padding: 12px 25px;
-          border-radius: 25px;
-          cursor: pointer;
-          font-size: 16px;
-          transition: background-color 0.3s, transform 0.3s;
-          margin-top: 20px;
-      }
+        button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
 
-      button:hover {
-          background-color: #d62839;
-          transform: scale(1.1);
-      }
+        button:hover {
+            background-color: #d62839;
+            transform: scale(1.1);
+        }
 
-      @media (max-width: 768px) {
-          h1 {
-              font-size: 1.8em;
-          }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
 
-          p {
-              font-size: 1em;
-          }
+            p {
+                font-size: 1em;
+            }
 
-          .container {
-              padding: 20px;
-          }
-      }
+            .container {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>I'm Sorry, Lorri</h1>
-        <p>I hope this message finds you well. I want to sincerely apologize for making things awkward by expressing my feelings. It was never my intention to make you uncomfortable.</p>
-        <p>Our friendship is incredibly important to me, and I cherish the time we spend together. I hope we can still be friends because I truly value having you in my life.</p>
-        <p>Please let me know if you’re open to it. I'm here whenever you’re ready to talk.</p>
-        <p>With warm regards,</p>
+        <h1>Hey Lorri,</h1>
+        <p>Hope you're doing okay. I wanted to say sorry for making things awkward when I told you how I feel. That wasn't my intention at all, and I really didn't mean to make you uncomfortable.</p>
+        <p>Your friendship means a lot to me, and I’d hate to lose that. I value the time we spend together and hope we can still be friends like before.</p>
+        <p>Let me know if you're open to it. I'm here whenever you want to talk.</p>
+        <p>Take care,</p>
         <p>Alfie</p>
         <button onclick="sendMessage()">Send a Message To Me</button>
     </div>
@@ -105,8 +105,8 @@
 
         // Function to open WhatsApp chat
         function sendMessage() {
-            const phoneNumber = 'whatsapp://send?phone=+1234567890&text=Hi%20Lorri%2C%20Can%20we%20still%20be%20friends%3F';
-            window.open(phoneNumber, '+44 7946 358290');
+            const phoneNumber = 'whatsapp://send?phone=+447946358290&text=Hi%20Alfie%2C%20We%20Can%20still%20be%20friends%3F';
+            window.open(phoneNumber, '+447946358290');
         }
 
         // Soft background color animation
