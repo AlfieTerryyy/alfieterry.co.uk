@@ -46,6 +46,11 @@ header h1 {
 .logo img {
     height: 50px;
     margin-right: 10px;
+    width: auto;
+}
+
+nav {
+    margin-top: 10px;
 }
 
 nav ul {
@@ -53,10 +58,11 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav li {
-    float: left;
+    margin: 0;
 }
 
 nav li a {
@@ -73,6 +79,7 @@ nav li a:hover {
 
 main {
     padding: 100px 20px 20px; /* Adjust padding to accommodate the fixed header */
+    margin-top: 70px; /* Added margin-top to prevent content overlap with fixed header */
 }
 
 footer {
@@ -97,6 +104,11 @@ footer {
     margin-bottom: 40px;
 }
 
+.content img {
+    max-width: 100%;
+    height: auto;
+}
+
 section h2 {
     margin-top: 0;
 }
@@ -104,6 +116,7 @@ section h2 {
 @media (max-width: 600px) {
     header {
         text-align: center;
+        padding: 15px;
     }
 
     .logo {
@@ -114,14 +127,12 @@ section h2 {
     nav ul {
         flex-direction: column;
     }
+
+    nav li {
+        width: 100%;
+    }
 }
 
-.pdf-embed {
-    width: 100%;
-    height: 500px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
 
 <!----- Nav ---->
 ul {
