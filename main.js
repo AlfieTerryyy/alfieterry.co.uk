@@ -45,30 +45,17 @@ function redirectToMobileVersion() {
         // Get the current URL
         var currentUrl = window.location.href;
 
-        // Check if the URL already ends with 'm'
-        if (!currentUrl.endsWith('m')) {
-            // Append 'm' to the URL
-            var newUrl = currentUrl + 'm';
-            // Redirect to the new URL
-            window.location.href = newUrl;
+        // Define the base URL and target URL
+        var baseUrl = 'https://alfieterry.co.uk/';
+        var targetUrl = 'https://alfieterry.co.uk/indexm';
+
+        // Check if the current URL is exactly the base URL
+        if (currentUrl === baseUrl || currentUrl === baseUrl + '#') {
+            // Redirect to the target URL
+            window.location.href = targetUrl;
         }
     }
 }
 
 // Call the function to check and possibly redirect
 redirectToMobileVersion();
-
-// Change header and footer background on scroll
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-
-    // Adjust opacity based on scroll position for a dynamic effect
-    if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'; // Lightens the background a bit
-        footer.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
-    } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-        footer.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-    }
-});
