@@ -53,27 +53,5 @@ window.addEventListener('scroll', function () {
     }
 });
 
-function redirectToMobileVersion() {
-    // Function to check if the device is mobile
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
 
-    // Check if the device is mobile
-    if (isMobileDevice()) {
-        // Get the current URL
-        var currentUrl = window.location.href;
-
-        // Check if the URL already ends with 'm'
-        if (!currentUrl.endsWith('m')) {
-            // Append 'm' to the URL
-            var newUrl = currentUrl + 'm';
-            // Redirect to the new URL
-            window.location.href = newUrl;
-        }
-    }
-}
-
-// Call the function to check and possibly redirect
-redirectToMobileVersion();
 
