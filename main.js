@@ -2,11 +2,11 @@
 const colors = ["#fff3cd", "#f8d7da", "#d4edda", "#d1ecf1", "#f5c6cb"];
 let index = 0;
 
-// Change the background color every 5 seconds
+// Change the background color every 4 seconds
 setInterval(() => {
     document.body.style.backgroundColor = colors[index];
     index = (index + 1) % colors.length;
-}, 5000);
+}, 4000);
 
 // Wait for the DOM to be ready
 $(document).ready(function(){
