@@ -1,52 +1,53 @@
-/* Basic Styles */
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
+    font-family: 'Oswald', system-ui, 'Georgia', serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #f8d7da;
     transition: background-color 2s;
     color: #333;
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    padding-top: 60px; /* Adjusted for fixed header on smaller screens */
+    padding-top: 100px; /* Offset for fixed header */
     padding-bottom: 50px; /* Offset for fixed footer */
 }
 
 header {
     background: rgba(255, 255, 255, 0.3); /* White with transparency */
     color: #fff;
-    padding: 15px 10px; /* Adjusted padding for smaller screens */
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* Column direction for mobile */
+    flex-direction: column; /* Change to column direction */
     align-items: center; /* Center align all content */
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a more pronounced shadow */
     backdrop-filter: blur(10px); /* Blurs the background */
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.5em; /* Adjusted for better mobile readability */
+    font-size: 1.8em;
     font-weight: bold;
-    color: #333; /* Dark header text color */
+    color: #333; /* Change header text color to dark */
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Spacing below logo */
 }
 
 .logo img {
-    height: 40px; /* Reduced size for mobile */
+    height: 50px;
     margin-right: 10px;
     width: auto;
 }
 
 nav {
-    width: 100%; /* Full width for navigation */
+    margin-top: 10px;
+    width: 100%; /* Take full width */
 }
 
 nav ul {
@@ -54,25 +55,24 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* Stack navigation items vertically */
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
+    justify-content: center; /* Center navigation items */
+    flex-wrap: wrap;
+    gap: 10px; /* Added spacing between nav items */
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background for nav */
+    backdrop-filter: blur(10px); /* Adds blur effect to nav background */
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 10px; /* Adds rounded corners */
 }
 
 nav li {
     margin: 0;
-    width: 100%; /* Full width for navigation items */
 }
 
 nav li a {
     display: block;
-    color: #333;
+    color: #333; /* Change link color to dark */
     text-align: center;
-    padding: 10px;
+    padding: 10px 14px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -83,7 +83,7 @@ nav li a:hover {
 }
 
 main {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,7 +91,7 @@ main {
 }
 
 footer {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -100,58 +100,59 @@ footer {
     width: 100%;
     z-index: 1000;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Blurs the background */
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px; /* Rounded corners */
-    padding: 20px;
+    border-radius: 20px;
+    padding: 30px;
     width: 90%;
     max-width: 800px;
     text-align: center;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+    margin: 20px auto;
 }
 
 .container:hover {
-    transform: scale(1.02); /* Slight scale for hover effect */
+    transform: scale(1.05);
     background-color: rgba(255, 255, 255, 1); /* Full opacity on hover */
 }
 
 .content {
     background-color: #f7f7f7;
-    padding: 15px;
+    padding: 20px;
     border: 1px solid #ddd;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    margin-bottom: 40px;
+    border-radius: 10px; /* Added rounded corners */
 }
 
 .content img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners for images */
 }
 
 section h2 {
     margin-top: 0;
-    font-size: 1.5em; /* Adjusted for better mobile readability */
+    font-size: 1.8em;
     color: #333;
 }
 
 h1 {
     color: #e63946;
-    font-size: 2em; /* Adjusted for better mobile readability */
-    margin-bottom: 15px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
     transition: text-shadow 0.5s;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 p {
     color: #333;
-    line-height: 1.6;
-    font-size: 1em; /* Adjusted font size */
-    margin: 10px 0;
+    line-height: 1.8;
+    font-size: 1.1em;
+    margin: 15px 0;
     transition: color 0.5s;
 }
 
@@ -159,7 +160,7 @@ button {
     background-color: #e63946;
     color: #fff;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
@@ -168,38 +169,78 @@ button {
 
 button:hover {
     background-color: #c5303e;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {
     header {
-        padding: 10px 5px; /* Further reduced padding */
+        text-align: center;
+        padding: 15px;
     }
 
     .logo {
-        margin-bottom: 5px; /* Reduced spacing */
-    }
-
-    header h1 {
-        font-size: 1.5em; /* Adjust font size for mobile */
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
     nav ul {
-        padding: 5px; /* Reduced padding for mobile */
+        flex-direction: column;
+        align-items: center;
     }
 
-    .container {
-        padding: 15px; /* Reduced padding for mobile */
-        border-radius: 8px; /* Adjusted border radius */
+    nav li {
+        width: 100%;
     }
 
-    button {
-        padding: 8px 14px; /* Adjusted button padding */
+    h1 {
+        font-size: 2em;
     }
 
     section h2 {
-        font-size: 1.4em; /* Adjusted font size for mobile */
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
     }
 }
 
-/* Remove global navigation styles that might conflict with mobile-first design */
+/* Global Navigation Styles */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+/* Use a unique and descriptive class name */
+.oswald-unique-class {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
