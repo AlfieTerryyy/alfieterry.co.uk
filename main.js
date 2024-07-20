@@ -1,5 +1,5 @@
 // Array of background colors for animation
-const colors = ["#f8d7da", "#fff3cd", "#d4edda", "#d1ecf1", "#f5c6cb"];
+const colors = ["#fff3cd", "#f8d7da", "#d4edda", "#d1ecf1", "#f5c6cb"];
 let index = 0;
 
 // Change the background color every 5 seconds
