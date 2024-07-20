@@ -1,20 +1,17 @@
 /* General Body Styles */
-body {
+html, body {
     margin: 0;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    overflow-x: hidden;
     background: #000;
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: relative;
 }
 
 /* Nebula and Starfield */
 .nebula, .starfield {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -100,13 +97,8 @@ main {
     box-sizing: border-box;
 }
 
-.intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 20px 0;
-}
-
-.welcome {
+/* Sections */
+.intro, .welcome, .featured, .external-link {
     text-align: center;
     max-width: 800px;
     margin: 20px 0;
@@ -119,11 +111,6 @@ main {
     font-weight: 700;
 }
 
-.featured {
-    margin: 20px 0;
-    text-align: center;
-}
-
 .featured iframe {
     border: none;
     border-radius: 8px;
@@ -133,7 +120,6 @@ main {
 
 .external-link {
     cursor: pointer;
-    text-align: center;
     background: rgba(255, 255, 255, 0.1);
     padding: 20px;
     border-radius: 8px;
