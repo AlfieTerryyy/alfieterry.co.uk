@@ -52,41 +52,5 @@ window.addEventListener('scroll', function () {
         footer.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
     }
 });
-function redirectBasedOnDevice() {
-    // Function to check if the device is mobile
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // Function to normalize URLs (remove trailing slashes)
-    function normalizeUrl(url) {
-        return url.replace(/\/$/, '');
-    }
-
-    // Define the base URL and target URLs
-    var baseUrl = 'https://alfieterry.co.uk/';
-    var mobileTargetUrl = 'https://alfieterry.co.uk/indexm';
-    
-    // Get the current URL
-    var currentUrl = window.location.href;
-    var normalizedCurrentUrl = normalizeUrl(currentUrl);
-
-    // Check if the device is mobile
-    if (isMobileDevice()) {
-        // Redirect to the mobile version if at the base URL
-        if (normalizedCurrentUrl === baseUrl) {
-            window.location.href = mobileTargetUrl;
-        }
-    } else {
-        // For non-mobile devices (PC), remove trailing 'm' if present
-        if (normalizedCurrentUrl === mobileTargetUrl) {
-            window.location.href = baseUrl;
-        }
-    }
-}
-
-// Call the function to check and possibly redirect
-redirectBasedOnDevice();
-
 
 
