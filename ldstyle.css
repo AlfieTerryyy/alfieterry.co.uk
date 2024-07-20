@@ -1,0 +1,176 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Nebula and Starfield */
+.nebula, .starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.nebula {
+    background: radial-gradient(circle at 20% 20%, rgba(255, 0, 150, 0.4), rgba(0, 0, 0, 0) 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.4), rgba(0, 0, 0, 0) 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 0, 0.4), rgba(0, 0, 0, 0) 50%),
+                radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0) 60%);
+    background-size: cover;
+    animation: nebulaAnimation 120s infinite;
+    mix-blend-mode: screen;
+}
+
+.starfield {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 20%),
+                radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 20%),
+                radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 20%);
+    background-size: 2px 2px;
+    background-repeat: repeat;
+    opacity: 0.6;
+    animation: starfieldAnimation 120s infinite;
+}
+
+@keyframes nebulaAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes starfieldAnimation {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-200px, -200px); }
+}
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #00f;
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Adjust for nav bar height */
+    z-index: 1;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.welcome {
+    text-align: center;
+    max-width: 800px;
+    margin: 20px 0;
+}
+
+.welcome h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+}
+
+.featured {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.featured iframe {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    max-width: 100%;
+}
+
+.external-link {
+    cursor: pointer;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.external-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.coppyright {
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+    
+    .welcome h2 {
+        font-size: 2em;
+    }
+}
