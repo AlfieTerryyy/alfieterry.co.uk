@@ -15,9 +15,8 @@ header {
     color: #fff;
     padding: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Change to column direction */
+    align-items: center; /* Center align all content */
     position: fixed;
     width: 100%;
     top: 0;
@@ -30,6 +29,7 @@ header h1 {
     margin: 0;
     font-size: 1.8em;
     font-weight: bold;
+    color: #333; /* Change header text color to dark */
 }
 
 .logo {
@@ -45,6 +45,7 @@ header h1 {
 
 nav {
     margin-top: 10px;
+    width: 100%; /* Take full width */
 }
 
 nav ul {
@@ -52,6 +53,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    justify-content: center; /* Center navigation items */
     flex-wrap: wrap;
     gap: 10px; /* Added spacing between nav items */
     background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background for nav */
@@ -66,7 +68,7 @@ nav li {
 
 nav li a {
     display: block;
-    color: white;
+    color: #333; /* Change link color to dark */
     text-align: center;
     padding: 10px 14px;
     text-decoration: none;
@@ -170,7 +172,6 @@ button:hover {
 
 @media (max-width: 600px) {
     header {
-        flex-direction: column;
         text-align: center;
         padding: 15px;
     }
