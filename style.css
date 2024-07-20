@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
+    font-family: 'oswald', system-ui, 'Georgia', serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #f8d7da;
     transition: background-color 2s;
     color: #333;
@@ -216,4 +218,14 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 200 to 700
+
+.oswald-<uniquifier> {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
