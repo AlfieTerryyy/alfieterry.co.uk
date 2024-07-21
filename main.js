@@ -152,6 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
     closePanel.addEventListener('click', () => {
         navPanel.classList.remove('open');
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+    hamburgerMenu.addEventListener('click', () => {
+        window.location.href = 'https://alfieterry.co.uk/nav';
+    });
+});
+
 });
 
 }
