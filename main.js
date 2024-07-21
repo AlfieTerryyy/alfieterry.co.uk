@@ -1,4 +1,40 @@
-$(document).ready(function () {
+// Array of background colors for animation
+const colors = ["#fff3cd", "#f8d7da", "#d4edda", "#d1ecf1", "#f5c6cb"];
+let index = 0;
+
+// Change the background color every 4 seconds
+setInterval(() => {
+    document.body.style.backgroundColor = colors[index];
+    index = (index + 1) % colors.length;
+}, 4000);
+
+// Wait for the DOM to be ready
+$(document).ready(function(){
+    // Text color change on hover using jQuery
+    $('.container p').hover(function(){
+        $(this).css('color', '#e63946');
+    }, function(){
+        $(this).css('color', '#333');
+    });
+
+    // Text shadow animation on hover using jQuery
+    $('.container h1').hover(function(){
+        $(this).css('text-shadow', '0 0 20px #e63946');
+    }, function(){
+        $(this).css('text-shadow', 'none');
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+$(document).ready(function() {
     // Apply saved theme on page load
     applySavedTheme();
 
@@ -9,26 +45,26 @@ $(document).ready(function () {
 
     // Text color change on hover using jQuery
     $('.container p').hover(
-        function () {
+        function() {
             $(this).css('color', '#e63946');
         },
-        function () {
+        function() {
             $(this).css('color', '#333');
         }
     );
 
     // Text shadow animation on hover using jQuery
     $('.container h1').hover(
-        function () {
+        function() {
             $(this).css('text-shadow', '0 0 20px #e63946');
         },
-        function () {
+        function() {
             $(this).css('text-shadow', 'none');
         }
     );
 
     // Smooth scrolling for anchor links
-    $('a[href^="#"]').on('click', function (e) {
+    $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
         const target = this.hash;
         $('html, body').animate({
@@ -37,17 +73,17 @@ $(document).ready(function () {
     });
 
     // Toggle dark/light mode
-    $('#theme-toggle').on('click', function () {
+    $('#theme-toggle').on('click', function() {
         $('body').toggleClass('dark-mode');
         saveThemePreference();
     });
 
     // Animate logo on hover
     $('.logo img').hover(
-        function () {
+        function() {
             $(this).css('transform', 'rotate(360deg)');
         },
-        function () {
+        function() {
             $(this).css('transform', 'rotate(0deg)');
         }
     );
@@ -59,7 +95,7 @@ $(document).ready(function () {
     updateFooterYear();
 
     // Scroll progress bar
-    $(window).on('scroll', function () {
+    $(window).on('scroll', function() {
         const scrollTop = $(window).scrollTop();
         const docHeight = $(document).height();
         const winHeight = $(window).height();
@@ -68,18 +104,18 @@ $(document).ready(function () {
     });
 
     // Toggle mobile navigation panel
-    $('.hamburger-menu').on('click', function () {
+    $('.hamburger-menu').on('click', function() {
         $('.nav-panel').addClass('open');
     });
 
     // Close mobile navigation panel
-    $('.close-panel').on('click', function () {
+    $('.close-panel').on('click', function() {
         $('.nav-panel').removeClass('open');
     });
 
     // Redirect on hamburger menu click for mobile
     if (isMobileDevice()) {
-        $('.hamburger-menu').on('click', function () {
+        $('.hamburger-menu').on('click', function() {
             window.location.href = 'https://alfieterry.co.uk/nav';
         });
     }
@@ -93,7 +129,7 @@ function showNotification(message) {
     }).appendTo('body');
 
     setTimeout(() => {
-        notification.fadeOut(400, function () {
+        notification.fadeOut(400, function() {
             $(this).remove();
         });
     }, 4000);
@@ -146,12 +182,3 @@ function applyMobileStyles() {
     $('.desktop-only').hide();
     $('.mobile-only').show();
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        })
-        .catch(error => console.error('Error loading header:', error));
-});
