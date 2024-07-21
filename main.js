@@ -1,14 +1,3 @@
-// Array of background colors for animation
-const colors = ["#fff3cd", "#f8d7da", "#d4edda", "#d1ecf1", "#f5c6cb"];
-let index = 0;
-
-// Change the background color every 4 seconds
-setInterval(() => {
-    document.body.style.backgroundColor = colors[index];
-    index = (index + 1) % colors.length;
-}, 4000);
-
-// Wait for the DOM to be ready
 $(document).ready(function() {
     // Apply saved theme on page load
     applySavedTheme();
@@ -80,12 +69,12 @@ $(document).ready(function() {
 
     // Toggle mobile navigation panel
     $('.hamburger-menu').on('click', function() {
-        $('.nav-panel').toggle();
+        $('.nav-panel').addClass('open');
     });
 
     // Close mobile navigation panel
     $('.close-panel').on('click', function() {
-        $('.nav-panel').hide();
+        $('.nav-panel').removeClass('open');
     });
 });
 
@@ -150,15 +139,3 @@ function applyMobileStyles() {
     $('.desktop-only').hide();
     $('.mobile-only').show();
 }
-$(document).ready(function() {
-    // Toggle mobile navigation panel
-    $('.hamburger-menu').on('click', function() {
-        $('.nav-panel').addClass('open');
-    });
-
-    // Close mobile navigation panel
-    $('.close-panel').on('click', function() {
-        $('.nav-panel').removeClass('open');
-    });
-});
-
