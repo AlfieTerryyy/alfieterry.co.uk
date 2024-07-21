@@ -173,135 +173,14 @@ p:hover {
     transform: scale(1.02);
 }
 
-button {
-    background-color: #e63946;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #c5303e;
+.button2 {
+    background-color: rgba(230, 230, 200, 0.9);
+    color: #e63946;
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Notification Styles */
-#notification {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #e63946;
-    color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    transition: opacity 0.4s;
-}
-
-/* Scroll Progress Bar */
-#scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background-color: #e63946;
-    width: 0;
-    z-index: 1002;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    .logo {
-        justify-content: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-    }
-
-    nav li {
-        width: 100%;
-    }
-
-    nav li a {
-        padding: 12px;
-    }
-
-    /* Show hamburger menu on mobile */
-    .hamburger-menu {
-        display: block;
-    }
-
-    /* Hide the main navigation bar on mobile */
-    nav {
-        display: none;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    h1 {
-        font-size: 2.2em;
-    }
-
-    nav ul {
-        gap: 10px;
-    }
-
-    .container {
-        padding: 20px;
-    }
-
-    footer {
-        padding: 15px;
-    }
-}
-
-/* Reset global unordered list styles */
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-/* Custom Font Styles for Oswald */
-.oswald-custom {
-    font-family: "Oswald", sans-serif;
-    font-weight: 400; /* Specify weight as needed */
-    font-style: normal;
+.button2:hover  {
+    background-color: rgba(230, 57, 70, 0.2);
+    color: #e63946;
+    transform: translateY(-3px);
 }
