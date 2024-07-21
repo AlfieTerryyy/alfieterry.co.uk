@@ -1,14 +1,14 @@
 /* Base Styles */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
     margin: 0;
     font-family: 'Oswald', system-ui, 'Georgia', serif;
     font-weight: 400;
     background-color: #f8d7da;
     color: #333;
-    min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 100px;
-    padding-bottom: 50px;
     transition: background-color 1s ease, color 0.5s ease;
 }
 
@@ -87,24 +87,26 @@ nav li a:hover {
 }
 
 main {
+    flex: 1; /* This will push the footer to the bottom */
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0; /* Ensure there's no margin causing a gap */
 }
+
 
 footer {
     background: rgba(255, 255, 255, 0.5);
     color: #333;
     padding: 20px;
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    z-index: 1000;
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(15px);
+    margin: 0; /* Ensure there's no margin causing a gap */
+    border-top: 1px solid #ddd; /* Optional: Add a border for visual separation */
 }
 
 .container {
