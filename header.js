@@ -1,4 +1,4 @@
-// header.js
+// custom-header.js
 
 class CustomHeader extends HTMLElement {
     constructor() {
@@ -34,45 +34,6 @@ class CustomHeader extends HTMLElement {
 
         // Attach the template content to the shadow DOM
         shadow.appendChild(template.content.cloneNode(true));
-
-        // Add <link> and <script> tags to the document head
-        this.addExternalResources();
-    }
-
-    addExternalResources() {
-        // List of resources to add
-        const resources = [
-            { type: 'link', href: 'https://fonts.googleapis.com', rel: 'preconnect' },
-            { type: 'link', href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: 'anonymous' },
-            { type: 'link', href: 'https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap', rel: 'stylesheet' },
-            { type: 'link', href: 'Logo3.ico', rel: 'icon', type: 'image/x-icon' },
-            { type: 'link', href: 'style.css', rel: 'stylesheet' },
-            { type: 'script', src: 'https://code.jquery.com/jquery-3.6.0.min.js' },
-            { type: 'script', src: 'main.js', defer: true },
-            { type: 'script', src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3897151508086803', async: true, crossorigin: 'anonymous' },
-            { type: 'script', src: 'https://www.googletagmanager.com/gtag/js?id=G-09BN8QLW21', async: true }
-        ];
-
-        // Add resources to the document head
-        resources.forEach(resource => {
-            const element = document.createElement(resource.type);
-            Object.keys(resource).forEach(key => {
-                if (key !== 'type') {
-                    element.setAttribute(key, resource[key]);
-                }
-            });
-            document.head.appendChild(element);
-        });
-
-        // Add Google Analytics script inline
-        const gtagScript = document.createElement('script');
-        gtagScript.textContent = `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-09BN8QLW21');
-        `;
-        document.head.appendChild(gtagScript);
     }
 }
 
