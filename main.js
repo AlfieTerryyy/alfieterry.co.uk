@@ -150,3 +150,15 @@ function applyMobileStyles() {
     $('.desktop-only').hide();
     $('.mobile-only').show();
 }
+$(document).ready(function() {
+    // Toggle mobile navigation panel
+    $('.hamburger-menu').on('click', function() {
+        $('.nav-panel').addClass('open');
+    });
+
+    // Close mobile navigation panel
+    $('.close-panel').on('click', function() {
+        $('.nav-panel').removeClass('open');
+    });
+});
+
