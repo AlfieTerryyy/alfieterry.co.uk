@@ -182,3 +182,21 @@ function applyMobileStyles() {
     $('.desktop-only').hide();
     $('.mobile-only').show();
 }
+
+ function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function hideLinksForMobile() {
+            if (isMobileDevice()) {
+                const links = document.querySelectorAll('a');
+                links.forEach(link => {
+                    link.removeAttribute('href');
+                    link.classList.add('mobile-hidden');
+                });
+            }
+        }
+
+        // Run the function when the page loads
+        window.addEventListener('DOMContentLoaded', hideLinksForMobile);
+
