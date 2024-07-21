@@ -76,6 +76,13 @@ $(document).ready(function() {
     $('.close-panel').on('click', function() {
         $('.nav-panel').removeClass('open');
     });
+
+    // Redirect on hamburger menu click for mobile
+    if (isMobileDevice()) {
+        $('.hamburger-menu').on('click', function() {
+            window.location.href = 'https://alfieterry.co.uk/nav';
+        });
+    }
 });
 
 // Show a notification with a message
@@ -138,29 +145,4 @@ function applyMobileStyles() {
     // Hide elements that are not mobile-friendly
     $('.desktop-only').hide();
     $('.mobile-only').show();
-
-    // JavaScript to toggle the mobile navigation panel
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navPanel = document.querySelector('.nav-panel');
-    const closePanel = document.querySelector('.close-panel');
-
-    hamburgerMenu.addEventListener('click', () => {
-        navPanel.classList.add('open');
-    });
-
-    closePanel.addEventListener('click', () => {
-        navPanel.classList.remove('open');
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-
-    hamburgerMenu.addEventListener('click', () => {
-        window.location.href = 'https://alfieterry.co.uk/nav';
-    });
-});
-
-});
-
 }
