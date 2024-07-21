@@ -13,6 +13,11 @@ $(document).ready(function() {
     // Apply saved theme on page load
     applySavedTheme();
 
+    // Apply mobile-specific styles if on a mobile device
+    if (isMobileDevice()) {
+        applyMobileStyles();
+    }
+
     // Text color change on hover using jQuery
     $('.container p').hover(
         function() {
@@ -111,4 +116,27 @@ function applySavedTheme() {
     } else {
         $('body').removeClass('dark-mode');
     }
+}
+
+// Check if the user is on a mobile device
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+// Apply mobile-specific styles
+function applyMobileStyles() {
+    // Example: Adjust font sizes and layout for mobile
+    $('body').css({
+        'font-size': '16px',
+        'padding': '10px'
+    });
+
+    $('.container').css({
+        'margin': '0 auto',
+        'padding': '10px'
+    });
+
+    // Hide elements that are not mobile-friendly
+    $('.desktop-only').hide();
+    $('.mobile-only').show();
 }
