@@ -77,6 +77,16 @@ $(document).ready(function() {
         const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
         $('#scroll-progress').width(scrollPercent + '%');
     });
+
+    // Toggle mobile navigation panel
+    $('.hamburger-menu').on('click', function() {
+        $('.nav-panel').toggle();
+    });
+
+    // Close mobile navigation panel
+    $('.close-panel').on('click', function() {
+        $('.nav-panel').hide();
+    });
 });
 
 // Show a notification with a message
