@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="scroll-progress"></div>
-    <div id="header"></div>
+    <div id="header"></div> <!-- This is where the header will be inserted -->
     <main>
         <p>
           <br>
@@ -52,5 +52,15 @@
     <footer>
         <p>© <span id="current-year"></span> Alfie Terry | Designed by Alfie Terry</p>
     </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+          })
+          .catch(error => console.error('Error loading header:', error));
+      });
+    </script>
 </body>
 </html>
