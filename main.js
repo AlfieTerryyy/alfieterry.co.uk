@@ -9,53 +9,83 @@ setInterval(() => {
 }, 4000);
 
 // Wait for the DOM to be ready
-$(document).ready(function(){
+$(document).ready(function() {
     // Text color change on hover using jQuery
-    $('.container p').hover(function(){
-        $(this).css('color', '#e63946');
-    }, function(){
-        $(this).css('color', '#333');
-    });
+    $('.container p').hover(
+        function() {
+            $(this).css('color', '#e63946');
+        },
+        function() {
+            $(this).css('color', '#333');
+        }
+    );
 
     // Text shadow animation on hover using jQuery
-    $('.container h1').hover(function(){
-        $(this).css('text-shadow', '0 0 20px #e63946');
-    }, function(){
-        $(this).css('text-shadow', 'none');
-    });
+    $('.container h1').hover(
+        function() {
+            $(this).css('text-shadow', '0 0 20px #e63946');
+        },
+        function() {
+            $(this).css('text-shadow', 'none');
+        }
+    );
 
     // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        const target = this.hash;
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 800);
+    });
+
+    // Toggle dark/light mode
+    $('#theme-toggle').on('click', function() {
+        $('body').toggleClass('dark-mode');
+    });
+
+    // Animate logo on hover
+    $('.logo img').hover(
+        function() {
+            $(this).css('transform', 'rotate(360deg)');
+        },
+        function() {
+            $(this).css('transform', 'rotate(0deg)');
+        }
+    );
+
+    // Show a notification on page load
+    showNotification("Welcome to The Terrance Territory!");
+
+    // Update the footer year dynamically
+    updateFooterYear();
+
+    // Scroll progress bar
+    $(window).on('scroll', function() {
+        const scrollTop = $(window).scrollTop();
+        const docHeight = $(document).height();
+        const winHeight = $(window).height();
+        const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+        $('#scroll-progress').width(scrollPercent + '%');
     });
 });
-function redirectToMobileVersion() {
-    // Function to check if the device is mobile
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
 
-    // Check if the device is mobile
-    if (isMobileDevice()) {
-        // Get the current URL
-        var currentUrl = window.location.href;
+// Show a notification with a message
+function showNotification(message) {
+    const notification = $('<div>', {
+        id: 'notification',
+        text: message
+    }).appendTo('body');
 
-        // Define the base URL and target URL
-        var baseUrl = 'https://alfieterry.co.uk/';
-        var targetUrl = 'https://alfieterry.co.uk/indexm';
-
-        // Check if the current URL is exactly the base URL
-        if (currentUrl === baseUrl || currentUrl === baseUrl + '#') {
-            // Redirect to the target URL
-            window.location.href = targetUrl;
-        }
-    }
+    setTimeout(() => {
+        notification.fadeOut(400, function() {
+            $(this).remove();
+        });
+    }, 4000);
 }
 
-// Call the function to check and possibly redirect
-redirectToMobileVersion();
+// Update the footer year dynamically
+function updateFooterYear() {
+    const year = new Date().getFullYear();
+    $('#current-year').text(year);
+}
