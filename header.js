@@ -1,4 +1,4 @@
-// custom-header.js
+// header.js
 
 class CustomHeader extends HTMLElement {
     constructor() {
