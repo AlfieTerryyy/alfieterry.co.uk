@@ -10,6 +10,9 @@ setInterval(() => {
 
 // Wait for the DOM to be ready
 $(document).ready(function() {
+    // Apply saved theme on page load
+    applySavedTheme();
+
     // Text color change on hover using jQuery
     $('.container p').hover(
         function() {
@@ -42,6 +45,7 @@ $(document).ready(function() {
     // Toggle dark/light mode
     $('#theme-toggle').on('click', function() {
         $('body').toggleClass('dark-mode');
+        saveThemePreference();
     });
 
     // Animate logo on hover
@@ -88,4 +92,23 @@ function showNotification(message) {
 function updateFooterYear() {
     const year = new Date().getFullYear();
     $('#current-year').text(year);
+}
+
+// Save the current theme preference to localStorage
+function saveThemePreference() {
+    if ($('body').hasClass('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Apply the saved theme preference
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        $('body').addClass('dark-mode');
+    } else {
+        $('body').removeClass('dark-mode');
+    }
 }
