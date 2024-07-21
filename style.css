@@ -401,3 +401,69 @@ li a:hover {
     font-weight: 400; /* Specify weight as needed */
     font-style: normal;
 }
+/* Mobile Navigation Panel */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.nav-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0; /* Change to right */
+    width: 250px; /* Set a specific width */
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 1002;
+    overflow: auto;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease;
+}
+
+.nav-panel.open {
+    transform: translateX(0); /* Slide in */
+}
+
+.nav-panel nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-panel nav li a {
+    font-size: 1.5em;
+    padding: 10px 20px;
+}
+
+/* Close Button */
+.close-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Adjust for mobile view */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+}
