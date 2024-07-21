@@ -138,4 +138,20 @@ function applyMobileStyles() {
     // Hide elements that are not mobile-friendly
     $('.desktop-only').hide();
     $('.mobile-only').show();
+
+    // JavaScript to toggle the mobile navigation panel
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navPanel = document.querySelector('.nav-panel');
+    const closePanel = document.querySelector('.close-panel');
+
+    hamburgerMenu.addEventListener('click', () => {
+        navPanel.classList.add('open');
+    });
+
+    closePanel.addEventListener('click', () => {
+        navPanel.classList.remove('open');
+    });
+});
+
 }
