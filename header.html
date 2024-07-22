@@ -7,20 +7,8 @@
             <ul>
                                                                          
                                                                          
-                                                                             <button type="button" class="button2">≡</button>
-
-    <script>
-        const button = document.querySelector('.button2');
-        
-        button.addEventListener('click', function() {
-            // Redirect to the specified URL
-            window.location.href = 'https://alfieterry.co.uk/nav';
-        });
-    </script>
-                                                                                                                  
-                                                                                                                  
-                                                                                                                  
-                <li><a href="index">Home</a></li>
+                                                                             <button type="button" class="button2">≡</button>          
+                                                                                                                                                                                                                                                                                                              <li><a href="index">Home</a></li>
                 <li><a href="bio">Biography</a></li>
                 <li><a href="certs">Certificates</a></li>
                 <li><a href="skills">Skills</a></li>
@@ -33,7 +21,41 @@
                                      
                                      <button type="button" class="button2">≡</button>
 
+</div>
+
+
     <script>
+
+        const button = document.querySelector('.button2');
+        
+        button.addEventListener('click', function() {
+            // Redirect to the specified URL
+            window.location.href = 'https://alfieterry.co.uk/nav';
+        });
+
+
+    
+        function hideNavbarOnMobile() {
+            // Select the navigation bar element
+            const navbar = document.getElementById('navbar');
+            
+            // Check the window's width
+            if (window.innerWidth <= 768) { // Assuming mobile if screen width is 768px or less
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'block';
+            }
+        }
+
+        // Run on initial load
+        hideNavbarOnMobile();
+
+        // Run on window resize
+        window.addEventListener('resize', hideNavbarOnMobile);
+
+
+
+
         const button = document.querySelector('.button2');
         
         button.addEventListener('click', function() {
