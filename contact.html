@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <div id="tags"></div>
-    <script src="header.js"></script>
-    <script src="tags.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> | The Terrance Territory | </title>
+    <link rel="icon" type="image/x-icon" href="Logo3.ico">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3897151508086803" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09BN8QLW21"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-09BN8QLW21');
+    </script>
 </head>
 <body>
-    <div id="scroll-progress"></div>
-    <div id="header"></div>
-    <main>
-                      <p>
-              <br>
-              <br>
-              <p>
-              <br>
-              <br>
-        <div class="container">
-            <section id="welcome" class="content">
-                <h1>Contact</h1>
-                <p>Contact Me At "talfie7243@gmail.com" or "alfie.terry1@outlook.com"</p>
-            </section>
-        </div>
-    </main>
-          <p>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo"><img src="https://alfieterry.co.uk/Logo3.png" alt="Logo"></a>
+            <nav class="navbar" id="navbar">
 
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="Contact" class="hero">
+            <h1>Contact</h1>
+            <p>Contact Me At alfie.terry1@outlook.com</p>
+          <br>
+            <a href="mailto:alfie.terry1@outlook.com" class="button"> Email </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>© <span id="current-year"></span> Alfie Terry | Designed by Alfie Terry</p>
+        <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
+    <div id="scroll-progress"></div>
 </body>
 </html>
