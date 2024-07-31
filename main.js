@@ -48,3 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateScrollProgress);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Update the footer year dynamically
+    const yearSpan = document.getElementById('current-year');
+    const year = new Date().getFullYear();
+    yearSpan.textContent = year;
+});
