@@ -1,14 +1,11 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>The Terrance Territory</title>
-    <link rel="icon" type="image/x-icon" href="Logo3.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title> | The Terrance Territory | </title>
+    <link rel="icon" type="image/x-icon" href="Logo3.ico">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="main.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3897151508086803" crossorigin="anonymous"></script>
@@ -22,67 +19,47 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://alfieterry.co.uk/Logo3.png" alt="Site Logo">
-            <h1>The Terrance Territory</h1>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo"><img src="https://alfieterry.co.uk/Logo3.png" alt="Logo"></a>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
         </div>
-        <div class="menu-toggle" onclick="toggleNavbar()">☰ Menu</div>
-        <nav id="navbar">
-            <ul>
-                <li><a href="index">Home</a></li>
-                <li><a href="bio">Biography</a></li>
-                <li><a href="certs">Certificates</a></li>
-                <li><a href="skills">Skills</a></li>
-                <li><a href="hobbies">Hobbies</a></li>
-                <li><a href="code">Free Code</a></li>
-                <li><a href="https://github.com/AlfieTerryyy/">GitHub</a></li>
-                <li><a href="https://www.youtube.com/channel/UCzEVXaJ9v7wnr_NhappA2rQ?app=desktop">YouTube</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="license">License</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- Main Content -->
     <main>
-                    <p>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-        <div class="container">
-            <section id="welcome" class="content">
-                <h1>Contents</h1>
-                <p>Contents Of this Box Should Match title above</p>
-            </section>
-        </div>
+        <section id="S1" class="hero">
+            <h1>Section 1</h1>
+            <p>This is Section One Of this Page</p>
+            <button class="button">Learn More</button>
+        </section>
+        <section id="S2" class="section">
+            <h2>Section 2</h2>
+            <p>This is Section Two Of this Page</p>
+        </section>
+        <section id="S3" class="section">
+            <h2>Section 3</h2>
+            <p>This is Section Three Of this Page</p>
+        </section>
+        <section id="S4" class="section">
+            <h2>Section 4</h2>
+            <p>This is Section Four Of this Pag</p>
+        </section>
     </main>
-        <p>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </p>
-        <div class="container">
-            <section id="welcome" class="content">
-                <h1>Contents</h1>
-                <p>Contents Of this Box Should Match title above</p>
-            </section>
-        </div>
-    </main>
-    <p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </p>
+
+    <!-- Footer -->
     <footer>
-        <p>© <span id="current-year"></span> Alfie Terry | Designed by Alfie Terry</p>
+        <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
+    <div id="scroll-progress"></div>
 </body>
 </html>
