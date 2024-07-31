@@ -9,39 +9,9 @@ setInterval(() => {
 }, 4000);
 
 // Wait for the DOM to be ready
-$(document).ready(function(){
-    // Text color change on hover using jQuery
-    $('.container p').hover(function(){
-        $(this).css('color', '#e63946');
-    }, function(){
-        $(this).css('color', '#333');
-    });
-
-    // Text shadow animation on hover using jQuery
-    $('.container h1').hover(function(){
-        $(this).css('text-shadow', '0 0 20px #e63946');
-    }, function(){
-        $(this).css('text-shadow', 'none');
-    });
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
 $(document).ready(function() {
     // Apply saved theme on page load
     applySavedTheme();
-
-    // Apply mobile-specific styles if on a mobile device
-    if (isMobileDevice()) {
-        applyMobileStyles();
-    }
 
     // Text color change on hover using jQuery
     $('.container p').hover(
@@ -102,6 +72,7 @@ $(document).ready(function() {
         const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
         $('#scroll-progress').width(scrollPercent + '%');
     });
+});
 
 // Show a notification with a message
 function showNotification(message) {
@@ -121,4 +92,23 @@ function showNotification(message) {
 function updateFooterYear() {
     const year = new Date().getFullYear();
     $('#current-year').text(year);
+}
+
+// Save the current theme preference to localStorage
+function saveThemePreference() {
+    if ($('body').hasClass('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Apply the saved theme preference
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        $('body').addClass('dark-mode');
+    } else {
+        $('body').removeClass('dark-mode');
+    }
 }
