@@ -97,7 +97,7 @@
     <header>
         <div class="logo">
             <img src="https://alfieterry.co.uk/Logo3.png" alt="Site Logo">
-            <h1>⒨ The Terrance Territory</h1>
+            <h1>The Terrance Territory</h1>
         </div>
         <div class="menu-toggle" onclick="toggleNavbar()">☰ Menu</div>
         <nav id="navbar">
@@ -119,14 +119,21 @@
     <script>
         function toggleNavbar() {
             const navbar = document.getElementById('navbar');
-            if (navbar.style.display === 'none' || navbar.style.display === '') {
+            const displayStyle = window.getComputedStyle(navbar).display;
+            navbar.style.display = (displayStyle === 'none' || displayStyle === '') ? 'flex' : 'none';
+        }
+
+        window.addEventListener('resize', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.innerWidth > 768) {
                 navbar.style.display = 'flex';
             } else {
                 navbar.style.display = 'none';
             }
-        }
+        });
 
-        window.addEventListener('resize', function() {
+        // Initial setup to ensure correct display on page load
+        window.addEventListener('load', function() {
             const navbar = document.getElementById('navbar');
             if (window.innerWidth > 768) {
                 navbar.style.display = 'flex';
