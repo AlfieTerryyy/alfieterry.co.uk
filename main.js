@@ -1,25 +1,17 @@
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    saveThemePreference();
-}
-
 // Save theme preference to localStorage
-function saveThemePreference() {
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+function saveThemePreference(theme) {
+    localStorage.setItem('theme', theme);
 }
 
 // Apply saved theme preference on page load
 function applySavedTheme() {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+    if (savedTheme) {
+        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
     } else {
-        document.body.classList.remove('dark-mode');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.body.classList.toggle('dark-mode', prefersDark);
+        saveThemePreference(prefersDark ? 'dark' : 'light');
     }
 }
 
@@ -42,12 +34,16 @@ function updateScrollProgress() {
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     updateFooterYear();
-    showNotification("Welcome to The Terrance Territory!");
-
-    document.getElementById('theme-toggle').addEventListener('click', toggleDarkMode);
 
     window.addEventListener('scroll', updateScrollProgress);
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        const newColorScheme = event.matches ? 'dark' : 'light';
+        document.body.classList.toggle('dark-mode', newColorScheme === 'dark');
+        saveThemePreference(newColorScheme);
+    });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     function adjustFooter() {
         const body = document.body;
