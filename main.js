@@ -103,24 +103,6 @@ $(document).ready(function() {
         $('#scroll-progress').width(scrollPercent + '%');
     });
 
-    // Toggle mobile navigation panel
-    $('.hamburger-menu').on('click', function() {
-        $('.nav-panel').addClass('open');
-    });
-
-    // Close mobile navigation panel
-    $('.close-panel').on('click', function() {
-        $('.nav-panel').removeClass('open');
-    });
-
-    // Redirect on hamburger menu click for mobile
-    if (isMobileDevice()) {
-        $('.hamburger-menu').on('click', function() {
-            window.location.href = 'https://alfieterry.co.uk/nav';
-        });
-    }
-});
-
 // Show a notification with a message
 function showNotification(message) {
     const notification = $('<div>', {
@@ -140,63 +122,3 @@ function updateFooterYear() {
     const year = new Date().getFullYear();
     $('#current-year').text(year);
 }
-
-// Save the current theme preference to localStorage
-function saveThemePreference() {
-    if ($('body').hasClass('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-// Apply the saved theme preference
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        $('body').addClass('dark-mode');
-    } else {
-        $('body').removeClass('dark-mode');
-    }
-}
-
-// Check if the user is on a mobile device
-function isMobileDevice() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-// Apply mobile-specific styles
-function applyMobileStyles() {
-    // Example: Adjust font sizes and layout for mobile
-    $('body').css({
-        'font-size': '16px',
-        'padding': '10px'
-    });
-
-    $('.container').css({
-        'margin': '0 auto',
-        'padding': '10px'
-    });
-
-    // Hide elements that are not mobile-friendly
-    $('.desktop-only').hide();
-    $('.mobile-only').show();
-}
-
- function isMobileDevice() {
-            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        }
-
-        function hideLinksForMobile() {
-            if (isMobileDevice()) {
-                const links = document.querySelectorAll('a');
-                links.forEach(link => {
-                    link.removeAttribute('href');
-                    link.classList.add('mobile-hidden');
-                });
-            }
-        }
-
-        // Run the function when the page loads
-        window.addEventListener('DOMContentLoaded', hideLinksForMobile);
-
