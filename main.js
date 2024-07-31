@@ -48,10 +48,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', updateScrollProgress);
 });
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Update the footer year dynamically
-    const yearSpan = document.getElementById('current-year');
-    const year = new Date().getFullYear();
-    yearSpan.textContent = year;
+    function adjustFooter() {
+        const body = document.body;
+        const html = document.documentElement;
+        const footer = document.querySelector('footer');
+
+        // Calculate the total height of the document
+        const documentHeight = Math.max(
+            body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight
+        );
+        
+        // Set the minimum height of the content to the viewport height
+        const viewportHeight = window.innerHeight;
+        const content = document.querySelector('.content');
+        if (documentHeight < viewportHeight) {
+            content.style.minHeight = `${viewportHeight - footer.offsetHeight}px`;
+        } else {
+            content.style.minHeight = 'auto';
+        }
+    }
+
+    // Adjust footer on page load and resize
+    adjustFooter();
+    window.addEventListener('resize', adjustFooter);
 });
