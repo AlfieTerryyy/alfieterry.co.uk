@@ -112,3 +112,27 @@ function applySavedTheme() {
         $('body').removeClass('dark-mode');
     }
 }
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            const displayStyle = window.getComputedStyle(navbar).display;
+            navbar.style.display = (displayStyle === 'none' || displayStyle === '') ? 'flex' : 'none';
+        }
+
+        window.addEventListener('resize', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.innerWidth > 768) {
+                navbar.style.display = 'flex';
+            } else {
+                navbar.style.display = 'none';
+            }
+        });
+
+        // Initial setup to ensure correct display on page load
+        window.addEventListener('load', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.innerWidth > 768) {
+                navbar.style.display = 'flex';
+            } else {
+                navbar.style.display = 'none';
+            }
+        });
