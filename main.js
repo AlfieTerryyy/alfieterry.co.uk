@@ -30,18 +30,20 @@ function updateScrollProgress() {
     document.getElementById('scroll-progress').style.width = scrollPercent + '%';
 }
 
+// Navbar toggle functionality
+function toggleNavbar() {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('open');
+}
+
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    applySavedTheme();
     updateFooterYear();
 
     window.addEventListener('scroll', updateScrollProgress);
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        const newColorScheme = event.matches ? 'dark' : 'light';
-        document.body.classList.toggle('dark-mode', newColorScheme === 'dark');
-        saveThemePreference(newColorScheme);
-    });
+    // Initialize menu toggle functionality
+    document.querySelector('.menu-toggle').addEventListener('click', toggleNavbar);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Set the minimum height of the content to the viewport height
         const viewportHeight = window.innerHeight;
-        const content = document.querySelector('.content');
+        const content = document.querySelector('main');
         if (documentHeight < viewportHeight) {
             content.style.minHeight = `${viewportHeight - footer.offsetHeight}px`;
         } else {
