@@ -1,50 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    applySavedTheme();
-    updateFooterYear();
-
-    window.addEventListener('scroll', updateScrollProgress);
-
-    document.querySelector('.menu-toggle').addEventListener('click', toggleNavbar);
-
-    function adjustFooter() {
-        const body = document.body;
-        const html = document.documentElement;
-        const footer = document.querySelector('footer');
-        const documentHeight = Math.max(
-            body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight
-        );
-        const viewportHeight = window.innerHeight;
-        const content = document.querySelector('main');
-        if (documentHeight < viewportHeight) {
-            content.style.minHeight = `${viewportHeight - footer.offsetHeight}px`;
-        } else {
-            content.style.minHeight = 'auto';
-        }
-    }
-
-    adjustFooter();
-    window.addEventListener('resize', adjustFooter);
-
-    // Initialize animation for wolfy
-    document.getElementById('animated-image').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('wolfy-msg').style.display = 'block';
-
-    const audio = new Audio('audio/welcome.mp3');
-    audio.play();
-
-    setTimeout(() => {
-        document.getElementById('animated-image').style.animation = 'none';
-        document.getElementById('animated-image').src = 'img/wolfyopen.png';
-        setTimeout(() => {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('wolfy-msg').style.display = 'none';
-        }, 2000); // Delay to show the open image before hiding
-    }, 3000); // Duration of spin animation
-});
-
-// Save theme preference to localStorage
+  // Save theme preference to localStorage
 function saveThemePreference(theme) {
     localStorage.setItem('theme', theme);
 }
@@ -81,3 +35,40 @@ function toggleNavbar() {
     const navbar = document.getElementById('navbar');
     navbar.classList.toggle('open');
 }
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', () => {
+    updateFooterYear();
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    // Initialize menu toggle functionality
+    document.querySelector('.menu-toggle').addEventListener('click', toggleNavbar);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    function adjustFooter() {
+        const body = document.body;
+        const html = document.documentElement;
+        const footer = document.querySelector('footer');
+
+        // Calculate the total height of the document
+        const documentHeight = Math.max(
+            body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight
+        );
+        
+        // Set the minimum height of the content to the viewport height
+        const viewportHeight = window.innerHeight;
+        const content = document.querySelector('main');
+        if (documentHeight < viewportHeight) {
+            content.style.minHeight = ${viewportHeight - footer.offsetHeight}px;
+        } else {
+            content.style.minHeight = 'auto';
+        }
+    }
+
+    // Adjust footer on page load and resize
+    adjustFooter();
+    window.addEventListener('resize', adjustFooter);
+});
