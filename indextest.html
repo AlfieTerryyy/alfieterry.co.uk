@@ -18,7 +18,66 @@
         gtag('config', 'G-09BN8QLW21');
     </script>
 </head>
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#overlay img, #wolfy-msg {
+    display: none;
+}
+
+#overlay img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#wolfy-msg {
+    font-size: 1.5em;
+    color: white;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.show {
+    display: block !important;
+}
+
+#wolfy-closed.spin {
+    animation: spin 2s linear;
+}
+
+    
+</style>
+
+
+
+    
 <body>
+ <div id="overlay">
+        <img id="wolfy-closed" src="wolfyclosed.png" alt="Wolfy Closed">
+        <img id="wolfy-open" src="wolfyopen.png" alt="Wolfy Open">
+        <div id="wolfy-msg">Welcome to the website!</div>
+    </div>
+    <div id="content">
      <!-- Header Section -->
     <header class="header">
         <div class="header-container">
@@ -62,5 +121,40 @@
         <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
     <div id="scroll-progress"></div>
+         <audio id="wolfy-sound" src="wolfysound.mp3"></audio>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const wolfyClosed = document.getElementById('wolfy-closed');
+    const wolfyOpen = document.getElementById('wolfy-open');
+    const wolfyMsg = document.getElementById('wolfy-msg');
+    const overlay = document.getElementById('overlay');
+    const wolfySound = document.getElementById('wolfy-sound');
+
+    // Show wolfyclosed.png and make it spin
+    wolfyClosed.classList.add('show', 'spin');
+
+    setTimeout(() => {
+        // Hide wolfyclosed.png and show wolfyopen.png
+        wolfyClosed.classList.remove('show', 'spin');
+        wolfyOpen.classList.add('show');
+    }, 2000);
+
+    setTimeout(() => {
+        // Hide wolfyopen.png and show wolfymsg
+        wolfyOpen.classList.remove('show');
+        wolfyMsg.classList.add('show');
+        
+        // Play the audio clip
+        wolfySound.play();
+    }, 3000);
+
+    setTimeout(() => {
+        // Hide overlay and show website content
+        overlay.style.display = 'none';
+    }, 5000);
+});
+
+        
+    </script>
 </body>
 </html>
