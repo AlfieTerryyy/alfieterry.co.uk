@@ -31,12 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('overlay').style.display = 'block';
     document.getElementById('wolfy-msg').style.display = 'block';
 
-    const audio = new Audio('path/to/audio.mp3');
+    const audio = new Audio('audio/welcome.mp3');
     audio.play();
 
     setTimeout(() => {
         document.getElementById('animated-image').style.animation = 'none';
-        document.getElementById('animated-image').src = 'wolfyopen.png';
+        document.getElementById('animated-image').src = 'img/wolfyopen.png';
         setTimeout(() => {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('wolfy-msg').style.display = 'none';
