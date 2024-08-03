@@ -8,14 +8,66 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#overlay img, #wolfy-msg {
+    display: none;
+}
+
+#overlay img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#wolfy-msg {
+    font-size: 1.5em;
+    color: white;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.show {
+    display: block !important;
+}
+
+#wolfy-closed.spin {
+    animation: spin 2s linear;
+}
+
+    
+</style>
+
+
+
+    
 <body>
-    <!---------Wolfy Anim---------->
-    
-    <div id="overlay"></div>
-    <img id="animated-image" src="img/wolfyclosed.png" alt="Wolfy Closed">
-    <div id="wolfy-msg">Wolfy Message</div>
-    
-    <!---------End Wolfy Anim---------->
+ <div id="overlay">
+        <img id="wolfy-closed" src="img/wolfyclosed.png" alt="Wolfy Closed">
+        <img id="wolfy-open" src="img/wolfyopen.png" alt="Wolfy Open">
+        <div id="wolfy-msg">Welcome to the website!</div>
+    </div>
+    <div id="content">
     <header class="header">
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/GLogo3.png" alt="Logo"></a>
