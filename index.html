@@ -3,137 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to The Terrance Territory, showcasing the work and services of Alfie Terry.">
+    <meta name="keywords" content="Alfie Terry, web development, computer science, services, contact">
+    <meta name="author" content="Alfie Terry">
     <title>The Terrance Territory</title>
     <link rel="icon" type="image/x-icon" href="Logo3.ico">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #overlay img, #wolfy-msg {
+            display: none;
+        }
+
+        #overlay img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        #wolfy-msg {
+            font-size: 1.5em;
+            color: white;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .show {
+            display: block !important;
+        }
+
+        #wolfy-closed.spin {
+            animation: spin 2s linear;
+        }
+    </style>
 </head>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#overlay img, #wolfy-msg {
-    display: none;
-}
-
-#overlay img {
-    max-width: 100px;
-    max-height: 100px;
-}
-
-#wolfy-msg {
-    font-size: 1.5em;
-    color: white;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.show {
-    display: block !important;
-}
-
-#wolfy-closed.spin {
-    animation: spin 2s linear;
-}
-</style>
-     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const wolfyClosed = document.getElementById('wolfy-closed');
-        const wolfyOpen = document.getElementById('wolfy-open');
-        const wolfyMsg = document.getElementById('wolfy-msg');
-        const overlay = document.getElementById('overlay');
-        const wolfySound = document.getElementById('wolfy-sound');
-
-        // Show wolfyclosed.png and make it spin
-        wolfyClosed.classList.add('show', 'spin');
-
-        setTimeout(() => {
-            // Hide wolfyclosed.png and show wolfyopen.png
-            wolfyClosed.classList.remove('show', 'spin');
-            wolfyOpen.classList.add('show');
-        }, 2000);
-
-        setTimeout(() => {
-            // Hide wolfyopen.png and show wolfymsg
-            wolfyOpen.classList.remove('show');
-            wolfyMsg.classList.add('show');
-            
-            // Play the audio clip
-            wolfySound.play();
-        }, 3000);
-
-        setTimeout(() => {
-            // Hide overlay and show website content
-            overlay.style.display = 'none';
-        }, 5000);
-    });
-    </script>
 <body>
     <div id="overlay">
         <img id="wolfy-closed" src="img/wolfyclosed.png" alt="Wolfy Closed">
         <img id="wolfy-open" src="img/wolfyopen.png" alt="Wolfy Open">
-        <div id="wolfy-msg">Welcome to the the terrance territory!</div>
+        <div id="wolfy-msg">Welcome to The Terrance Territory!</div>
         <audio id="wolfy-sound" src="https://alfieterry.co.uk/audio/welcome.mp3" preload="auto"></audio>
     </div>
-    <div id="content">
-        <header class="header">
-            <div class="header-container">
-                <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/GLogo3.png" alt="Logo"></a>
-                <nav class="navbar" id="navbar">
-                    <ul>
-                        <li><a href="index">Home</a></li>
-                        <li><a href="about">About</a></li>
-                        <li><a href="services">Services</a></li>
-                        <li><a href="contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
-            </div>
-        </header>
-        <main>
-            <section id="home" class="hero">
-                <h1>Welcome to The Terrance Territory</h1>
-                <p>The One Space For All My Work.</p>
-                <br>
-                <a href="https://alfieterry.co.uk/about" class="button">Learn More</a>
-            </section>
-            <section class="grid-container">
-                <div class="grid-item">
-                    <h2>About Me</h2>
-                    <p>I'm Alfie Terry and I'm interested in Computer Science.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>My Services</h2>
-                    <p>I will produce a fully functioning website/page for you.</p>
-                </div>
-                <div class="grid-item">
-                    <h2>Contact Me</h2>
-                    <p>Please contact me at alfie.terry1@outlook.com.</p>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
-        </footer>
-        <div id="scroll-progress"></div>
-    </div>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/GLogo3.png" alt="Alfie Terry Logo"></a>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to The Terrance Territory</h1>
+            <p>Your one-stop space for all my work.</p>
+            <a href="https://alfieterry.co.uk/about" class="button">Learn More</a>
+        </section>
+        <section class="grid-container">
+            <article class="grid-item">
+                <h2>About Me</h2>
+                <p>I'm Alfie Terry, a Computer Science enthusiast.</p>
+            </article>
+            <article class="grid-item">
+                <h2>My Services</h2>
+                <p>Offering professional web development services.</p>
+            </article>
+            <article class="grid-item">
+                <h2>Contact Me</h2>
+                <p>Reach out to me at <a href="mailto:alfie.terry1@outlook.com">alfie.terry1@outlook.com</a>.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+    </footer>
+    <div id="scroll-progress"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wolfyClosed = document.getElementById('wolfy-closed');
+            const wolfyOpen = document.getElementById('wolfy-open');
+            const wolfyMsg = document.getElementById('wolfy-msg');
+            const overlay = document.getElementById('overlay');
+            const wolfySound = document.getElementById('wolfy-sound');
+
+            wolfyClosed.classList.add('show', 'spin');
+
+            setTimeout(() => {
+                wolfyClosed.classList.remove('show', 'spin');
+                wolfyOpen.classList.add('show');
+            }, 2000);
+
+            setTimeout(() => {
+                wolfyOpen.classList.remove('show');
+                wolfyMsg.classList.add('show');
+                wolfySound.play();
+            }, 3000);
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 5000);
+
+            // Update year in footer dynamically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+
+        function toggleNavbar() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
