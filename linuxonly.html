@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Only - The Terrance Territory</title>
+    <link rel="icon" type="image/x-icon" href="Logo3.ico">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isLinux = userAgent.includes('linux');
+            
+            if (!isLinux) {
+                // Redirect non-Linux users to the 403 error page
+                window.location.href = '403.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://alfieterry.co.uk" class="logo">
+                <img src="https://alfieterry.co.uk/GLogo3.png" alt="Logo">
+            </a>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="services">Services</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
+        </div>
+    </header>
+ <section id="home" class="hero">
+                <h1>Welcome to The Terrance Territory</h1>
+                <p>Only Linux Usrs can Go to this page!</p>
+                <br>
+                <a href="https://alfieterry.co.uk/onlywin" class="button">Only Windows Usrs</a>
+            </section>
+</body>
+</html>
