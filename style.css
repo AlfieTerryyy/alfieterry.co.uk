@@ -341,4 +341,17 @@ footer {
 .error-container a:hover {
     text-decoration: underline;
 }
+/* Add this CSS to your existing style.css */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Target only the logo in the error-container */
+.error-container .logo img {
+    animation: spin 4s linear infinite;
+}
+
+/* Adjust the speed and other properties as needed */
 
