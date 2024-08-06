@@ -312,3 +312,33 @@ footer {
         font-size: 16px;
     }
 }
+
+/* 404 Error Page Styles */
+.error-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.error-container h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.error-container p {
+    margin-bottom: 1.5rem;
+}
+
+.error-container a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.error-container a:hover {
+    text-decoration: underline;
+}
+
