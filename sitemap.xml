@@ -19,28 +19,10 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://www.alfieterry.co.uk/indextest.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://www.alfieterry.co.uk/error.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>http://www.alfieterry.co.uk/contact.html</loc>
     <lastmod>2024-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://www.alfieterry.co.uk/citymcs.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>http://www.alfieterry.co.uk/about.html</loc>
@@ -49,33 +31,9 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://www.alfieterry.co.uk/500.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>http://www.alfieterry.co.uk/404.html</loc>
     <lastmod>2024-08-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>http://www.alfieterry.co.uk/403.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>http://www.alfieterry.co.uk/400.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>http://www.alfieterry.co.uk/10plate.html</loc>
-    <lastmod>2024-08-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
 </urlset>
