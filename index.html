@@ -10,52 +10,6 @@
     <link rel="icon" type="image/x-icon" href="Logo3.ico">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        #overlay img, #wolfy-msg {
-            display: none;
-        }
-
-        #overlay img {
-            max-width: 100px;
-            max-height: 100px;
-        }
-
-        #wolfy-msg {
-            font-size: 1.5em;
-            color: white;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .show {
-            display: block !important;
-        }
-
-        #wolfy-closed.spin {
-            animation: spin 2s linear;
-        }
-    </style>
 </head>
 <body>
     <div id="overlay">
@@ -67,7 +21,7 @@
     <header class="header">
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/GLogo3.png" alt="Alfie Terry Logo"></a>
-            <nav class="navbar" id="navbar">
+            <nav class="navbar" id="navbar">100
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -98,45 +52,11 @@
                 <p>Reach out to me at <a href="mailto:alfie.terry1@outlook.com">alfie.terry1@outlook.com</a>.</p>
             </article>
         </section>
+        <img src="/img/embeded/webdev.png" alt="Description" width="300" height="200">
     </main>
     <footer>
         <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
     <div id="scroll-progress"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const wolfyClosed = document.getElementById('wolfy-closed');
-            const wolfyOpen = document.getElementById('wolfy-open');
-            const wolfyMsg = document.getElementById('wolfy-msg');
-            const overlay = document.getElementById('overlay');
-            const wolfySound = document.getElementById('wolfy-sound');
-
-            wolfyClosed.classList.add('show', 'spin');
-
-            setTimeout(() => {
-                wolfyClosed.classList.remove('show', 'spin');
-                wolfyOpen.classList.add('show');
-            }, 2000);
-
-            setTimeout(() => {
-                wolfyOpen.classList.remove('show');
-                wolfyMsg.classList.add('show');
-                wolfySound.play();
-            }, 3000);
-
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 5000);
-
-            // Update year in footer dynamically
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
-
-        function toggleNavbar() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
