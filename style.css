@@ -18,37 +18,6 @@ body {
     position: relative; /* Position relative for scanlines effect */
 }
 
-/* CRT Effect */
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        -45deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.1) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-    background-size: 50px 50px; /* Size of each scanline block */
-    animation: scanlines 5s linear infinite; /* Slower animation for better visibility */
-    pointer-events: none;
-    mix-blend-mode: multiply; /* Blend mode to simulate CRT */
-    z-index: -1; /* Place behind the main content */
-}
-
-/* Scanlines animation */
-@keyframes scanlines {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 100% 100%;
-    }
-}
 
 /* Body content container */
 main {
